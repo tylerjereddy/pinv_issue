@@ -12,3 +12,5 @@ sns.heatmap(res, cmap='viridis', annot=False, ax=ax,
             norm=colors.SymLogNorm(linthresh=1.0, vmin=res.min(), vmax=res.max()))
 ax.set_title("pinv output array heatmap")
 fig.savefig("pinv_output.png", dpi=300)
+with open('res.npy', 'wb') as f:
+    np.save(f, res)
